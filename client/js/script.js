@@ -1,3 +1,4 @@
+const API_BASE_URL = "https://public-infrastructure-reporting.onrender.com";
 async function validateReport() {
     let name = document.getElementById("citizenName").value.trim();
     let mobile = document.getElementById("mobile").value.trim();
