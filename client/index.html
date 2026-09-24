@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Infrastructure Damage Reporting System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Public Infrastructure Damage Reporting System</h1>
+
+        <nav>
+
+    <a href="index.html">Home</a>
+    <a href="report.html">Report Damage</a>
+    <a href="complaint.html">My Complaints</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+   <a href="admin-login.html">Admin</a>
+
+    <span id="userName"></span>
+
+    <button
+        id="logoutButton"
+        onclick="logoutUser()"
+        style="display:none;">
+        Logout
+    </button>
+
+</nav>
+    </header>
+
+    <section class="hero">
+
+<div class="hero-content">
+
+<h2>Report Public Infrastructure Issues</h2>
+
+<p>
+Help your city by reporting damaged roads,
+street lights, water leakage, garbage issues
+and more.
+</p>
+
+<a href="report.html" class="btn">Report Now</a>
+
+</div>
+
+</section>
+    <section class="about">
+
+        <h2>About Project</h2>
+
+        <p>
+          The Public Infrastructure Damage Reporting System enables citizens
+    to report damaged roads, broken street lights, water leakage,
+    garbage collection issues and bridge damage. The complaints are
+    forwarded to the concerned government authority for timely action,
+    helping improve public infrastructure and city services.
+        </p>
+
+    </section>
+    <section class="government">
+
+    <img src="images/rastrapati bhavan.jpg" alt="Government">
+
+    <div class="content">
+        <h2>Government Initiative</h2>
+
+        <p>
+            This portal encourages citizens to report public
+            infrastructure problems directly. Complaints are
+            forwarded to the respective departments for faster
+            maintenance and better public services.
+        </p>
+    </div>
+
+</section>
+<section class="services">
+
+    <h2>Our Services</h2>
+
+    <div class="service-grid">
+
+        <div class="card">
+            <img src="images/pothhole.jpg" alt="Road Damage">
+            <h3>Road Damage</h3>
+            <p>Report potholes and damaged roads for quick repair.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/water.jpg" alt="Water Leakage">
+            <h3>Water Leakage</h3>
+            <p>Report leaking pipelines and water wastage.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/garbage.jpg" alt="Garbage">
+            <h3>Garbage Collection</h3>
+            <p>Report garbage collection issues in your locality.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/bridge.jpg" alt="Bridge Damage">
+            <h3>Bridge Damage</h3>
+            <p>Report damaged bridges and unsafe flyovers.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/smartcity.jpg" alt="Smart City">
+            <h3>Smart City</h3>
+            <p>Support smart city infrastructure by reporting issues.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/report.jpg" alt="Report">
+            <h3>Online Complaint</h3>
+            <p>Submit complaints online with photos and location details.</p>
+        </div>
+
+    </div>
+
+</section>
+
+    
+<section class="gallery">
+
+    <h2>Infrastructure Gallery</h2>
+
+    <div class="gallery-grid">
+
+        <img src="images/road.jpg" alt="Road">
+        <img src="images/bridge.jpg" alt="Bridge">
+        <img src="images/smartcity.jpg" alt="Smart City">
+        <img src="images/water.jpg" alt="Water Leakage">
+        <img src="images/garbage.jpg" alt="Garbage">
+        <img src="images/pothhole.jpg" alt="Pothole">
+        <img src="images/report.jpg" alt="Report">
+        <img src="images/rastrapati bhavan.jpg" alt="Government">
+
+    </div>
+
+</section>
+<section class="stats">
+
+    <div class="stat-box">
+        <h2 id="totalCount">0</h2>
+        <p>Total Complaints</p>
+    </div>
+
+    <div class="stat-box">
+        <h2 id="pendingCount">0</h2>
+        <p>Pending Complaints</p>
+    </div>
+
+    <div class="stat-box">
+        <h2 id="progressCount">0</h2>
+        <p>In Progress</p>
+    </div>
+
+    <div class="stat-box">
+        <h2 id="resolvedCount">0</h2>
+        <p>Resolved Complaints</p>
+    </div>
+
+</section>
+<footer>
+    <p>© 2026 Public Infrastructure Damage Reporting System</p>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

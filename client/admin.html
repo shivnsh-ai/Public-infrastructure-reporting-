@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="checkAdmin(); loadAdminComplaints(); loadStatistics();">
+
+    <header>
+        <nav>
+            <h2>Infrastructure Damage Reporting</h2>
+
+            <div>
+                <a href="index.html">Home</a>
+                <a href="complaint.html">Complaints</a>
+                <button onclick="adminLogout()">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-container">
+
+        <div class="admin-header">
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p>Manage citizen complaints and infrastructure issues.</p>
+            </div>
+        </div>
+
+        <div class="dashboard-cards">
+
+            <div class="card">
+                <h3>Total Complaints</h3>
+                <p id="totalCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Pending</h3>
+                <p id="pendingCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>In Progress</h3>
+                <p id="progressCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Resolved</h3>
+                <p id="resolvedCount">0</p>
+            </div>
+
+        </div>
+
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="searchComplaint"
+                placeholder="Search complaints..."
+                onkeyup="filterComplaints()"
+            >
+
+        </div>
+
+        <div class="table-container">
+
+            <table class="complaint-table">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Citizen Name</th>
+                        <th>Mobile</th>
+                        <th>Damage Type</th>
+                        <th>Location</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="adminTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Damage</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="checkLogin()">
+
+<header>
+
+    <h1>Public Infrastructure Damage Reporting System</h1>
+
+   <nav>
+
+    <a href="index.html">Home</a>
+    <a href="report.html">Report Damage</a>
+    <a href="complaint.html">My Complaints</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+    <a href="admin-login.html">Admin</a>
+
+    <span id="userName"></span>
+
+    <button
+        id="logoutButton"
+        onclick="logoutUser()"
+        style="display:none;">
+        Logout
+    </button>
+
+</nav>
+</header>
+
+<section class="form-section">
+
+    <h2>Report Infrastructure Damage</h2>
+
+<form onsubmit="return validateReport()">
+
+    <input type="text" id="citizenName" placeholder="Enter Your Full Name" required>
+
+    <input type="tel" id="mobile" placeholder="Enter Mobile Number" required>
+
+    <input type="email" id="email" placeholder="Enter Email Address" required>
+
+    <select id="damageType" required>
+        <option value="">Select Damage Type</option>
+        <option>Road Damage</option>
+        <option>Bridge Damage</option>
+        <option>Water Leakage</option>
+        <option>Street Light</option>
+        <option>Garbage</option>
+        <option>Drainage</option>
+    </select>
+
+    <input type="text" id="location" placeholder="Enter Damage Location" required>
+
+    <textarea id="description" rows="6" placeholder="Describe the damage..." required></textarea>
+
+   <input type="file" id="image" accept="image/*">
+
+    <button type="submit">Submit Complaint</button>
+
+</form>
+</section>
+
+<footer>
+    <p>© 2026 Public Infrastructure Damage Reporting System</p>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
