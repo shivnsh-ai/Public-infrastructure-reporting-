@@ -1,4 +1,5 @@
 const API_BASE_URL = "https://public-infrastructure-reporting.onrender.com";
+
 async function validateReport() {
     let name = document.getElementById("citizenName").value.trim();
     let mobile = document.getElementById("mobile").value.trim();
@@ -39,7 +40,7 @@ async function validateReport() {
             };
 
             let response = await fetch(
-                "http://localhost:5000/api/complaints",
+                `${API_BASE_URL}/api/complaints`,
                 {
                     method: "POST",
                     headers: {
@@ -73,6 +74,7 @@ async function validateReport() {
     return false;
 }
 
+
 async function loadComplaints() {
     let table = document.getElementById("tableBody");
 
@@ -82,7 +84,7 @@ async function loadComplaints() {
 
     try {
         let response = await fetch(
-            "http://localhost:5000/api/complaints"
+            `${API_BASE_URL}/api/complaints`
         );
 
         if (!response.ok) {
@@ -133,6 +135,7 @@ async function loadComplaints() {
     }
 }
 
+
 async function loadAdminComplaints() {
     let table = document.getElementById("adminTableBody");
     let total = document.getElementById("totalComplaints");
@@ -143,7 +146,7 @@ async function loadAdminComplaints() {
 
     try {
         let response = await fetch(
-            "http://localhost:5000/api/complaints"
+            `${API_BASE_URL}/api/complaints`
         );
 
         if (!response.ok) {
@@ -216,6 +219,7 @@ async function loadAdminComplaints() {
     }
 }
 
+
 async function filterComplaints() {
     let searchBox = document.getElementById("searchComplaint");
     let table = document.getElementById("adminTableBody");
@@ -228,7 +232,7 @@ async function filterComplaints() {
 
     try {
         let response = await fetch(
-            "http://localhost:5000/api/complaints"
+            `${API_BASE_URL}/api/complaints`
         );
 
         if (!response.ok) {
@@ -305,10 +309,11 @@ async function filterComplaints() {
     }
 }
 
+
 async function changeStatus(id, newStatus) {
     try {
         let response = await fetch(
-            `http://localhost:5000/api/complaints/${id}`,
+            `${API_BASE_URL}/api/complaints/${id}`,
             {
                 method: "PUT",
                 headers: {
@@ -339,6 +344,7 @@ async function changeStatus(id, newStatus) {
     }
 }
 
+
 async function deleteComplaint(id) {
     let answer = confirm(
         "Are you sure you want to delete this complaint?"
@@ -350,7 +356,7 @@ async function deleteComplaint(id) {
 
     try {
         let response = await fetch(
-            `http://localhost:5000/api/complaints/${id}`,
+            `${API_BASE_URL}/api/complaints/${id}`,
             {
                 method: "DELETE"
             }
@@ -374,6 +380,7 @@ async function deleteComplaint(id) {
         alert("Unable to delete complaint.");
     }
 }
+
 
 function registerUser() {
     let name = document.getElementById("registerName").value;
@@ -410,6 +417,7 @@ function registerUser() {
 
     return false;
 }
+
 
 function loginUser() {
     let email = document.getElementById("loginEmail").value;
@@ -448,6 +456,7 @@ function loginUser() {
     return false;
 }
 
+
 function logoutUser() {
     localStorage.removeItem("loggedIn");
 
@@ -455,6 +464,7 @@ function logoutUser() {
 
     window.location = "login.html";
 }
+
 
 function showUserName() {
     let user = JSON.parse(
@@ -482,6 +492,7 @@ function showUserName() {
     }
 }
 
+
 function checkLogin() {
     let loggedIn = localStorage.getItem("loggedIn");
 
@@ -490,6 +501,7 @@ function checkLogin() {
         window.location = "login.html";
     }
 }
+
 
 function checkAdmin() {
     let adminLoggedIn =
@@ -507,6 +519,7 @@ function checkAdmin() {
 
     return true;
 }
+
 
 function adminLogin() {
     let username =
@@ -541,6 +554,7 @@ function adminLogin() {
     return false;
 }
 
+
 function adminLogout() {
     localStorage.removeItem("adminLoggedIn");
 
@@ -549,10 +563,11 @@ function adminLogout() {
     window.location = "admin-login.html";
 }
 
+
 async function loadStatistics() {
     try {
         let response = await fetch(
-            "http://localhost:5000/api/complaints"
+            `${API_BASE_URL}/api/complaints`
         );
 
         if (!response.ok) {
@@ -615,6 +630,7 @@ async function loadStatistics() {
         );
     }
 }
+
 
 window.addEventListener("load", function () {
     loadComplaints();
